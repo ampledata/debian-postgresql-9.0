@@ -4,6 +4,7 @@ postgresql-9.0 (9.0.4-2) UNRELEASED; urgency=low
   * Add 03-cmsgcred-size.patch: Fix size of struct cmsgcred to fix ident
     authentication on kFreeBSD 64 bit. Thanks to Petr Salinger for the
     patch! (Closes: #627596)
+  * debian/control: Add explicit build dependency to jade. (Closes: #621492)
 
  -- Martin Pitt <mpitt@debian.org>  Thu, 21 Apr 2011 12:29:01 +0200
 
