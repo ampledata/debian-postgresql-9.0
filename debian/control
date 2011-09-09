@@ -5,87 +5,13 @@ Maintainer: Martin Pitt <mpitt@debian.org>
 Uploaders: Peter Eisentraut <petere@debian.org>
 Standards-Version: 3.9.1
 Build-Depends: debhelper (>= 5.0.37.2), cdbs (>= 0.4.43), perl (>= 5.8),
- libperl-dev, tcl8.5-dev, libedit-dev, libssl-dev, 
+ libperl-dev, tcl8.5-dev, libedit-dev, libssl-dev, libpq-dev (>= 9.0~),
  zlib1g-dev | libz-dev, libpam0g-dev | libpam-dev, libxml2-dev, libkrb5-dev,
  libldap2-dev, libxslt1-dev, libossp-uuid-dev, python-dev, jade,
  gettext, hardening-wrapper
 Homepage: http://www.postgresql.org/
 Vcs-Browser: http://bazaar.launchpad.net/~pitti/postgresql/debian-9.0
 Vcs-Bzr: https://code.launchpad.net/~pitti/postgresql/debian-9.0
-
-Package: libpq-dev
-Architecture: any
-Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, libpq5 (= ${binary:Version}), libssl-dev, libkrb5-dev, comerr-dev
-Conflicts: postgresql-dev (<< 7.5)
-Replaces: postgresql-dev
-Suggests: postgresql-doc-9.0
-Description: header files for libpq5 (PostgreSQL library)
- Header files and static library for compiling C programs to link
- with the libpq library in order to communicate with a PostgreSQL
- database backend.
- .
- PostgreSQL is an object-relational SQL database management system.
-
-Package: libpq5
-Architecture: any
-Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: PostgreSQL C client library
- libpq is a C library that enables user programs to communicate with
- the PostgreSQL database server.  The server can be on another machine
- and accessed through TCP/IP.  This version of libpq is compatible
- with servers from PostgreSQL 8.2 or later.
- .
- This package contains the run-time library, needed by packages using
- libpq.
- .
- PostgreSQL is an object-relational SQL database management system.
-
-Package: libecpg6
-Architecture: any
-Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: run-time library for ECPG programs
- The libecpg shared library is used by programs built with ECPG
- (Embedded PostgreSQL for C).
- .
- PostgreSQL is an object-relational SQL database management system.
-
-Package: libecpg-dev
-Architecture: any
-Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, libpq-dev, libecpg6 (= ${binary:Version}), libecpg-compat3 (= ${binary:Version}), libpgtypes3 (= ${binary:Version})
-Conflicts: postgresql-dev, libecpg3-dev
-Description: development files for ECPG (Embedded PostgreSQL for C)
- This package contains the necessary files to build ECPG (Embedded
- PostgreSQL for C) programs.  It includes the development libraries
- and the preprocessor program ecpg.
- .
- PostgreSQL is an object-relational SQL database management system.
- .
- Install this package if you want to write C programs with SQL statements
- embedded in them (rather than run by an external process).
-
-Package: libecpg-compat3
-Architecture: any
-Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: older version of run-time library for ECPG programs
- The libecpg_compat shared library is used by programs built with ecpg.
- (Embedded PostgreSQL for C).
- .
- PostgreSQL is an object-relational SQL database management system.
-
-Package: libpgtypes3
-Architecture: any
-Section: libs
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: shared library libpgtypes for PostgreSQL 9.0
- The libpgtypes shared library is used by programs built with ecpg.
- (Embedded PostgreSQL for C).
- .
- PostgreSQL is an object-relational SQL database management system.
 
 Package: postgresql-9.0
 Architecture: any

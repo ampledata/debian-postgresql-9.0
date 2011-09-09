@@ -1,3 +1,12 @@
+postgresql-9.0 (9.0.4-3) UNRELEASED; urgency=low
+
+  * debian/control: Stop building the client-side libraries, they are built by
+    postgresql-9.1 now. Add libpq-dev build dependency.
+  * debian/rules: Drop check for uninstalled files, since it'd now break the
+    build due to the uninstalled libraries.
+
+ -- Martin Pitt <mpitt@debian.org>  Fri, 09 Sep 2011 08:50:40 +0200
+
 postgresql-9.0 (9.0.4-2) unstable; urgency=low
 
   * debian/postgresql-9.0.postrm: Clean up pg_ctl.conf on purge.
